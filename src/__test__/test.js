@@ -1,12 +1,13 @@
 import Team from '../team';
 import Character from '../character';
 
-test('Try to add repeating character in team using team.add()', () => {
-  const team = new Team();
+const team = new Team();
 
-  const valera = new Character('Valera', 'mage');
-  const stas = new Character('Stas', 'warrior');
-  const alex = new Character('Alex', 'archer');
+const valera = new Character('Valera', 'mage');
+const stas = new Character('Stas', 'warrior');
+const alex = new Character('Alex', 'archer');
+
+test('Try to add repeating character in team using team.add()', () => {
 
   team.add(valera);
   team.add(stas);
@@ -16,11 +17,6 @@ test('Try to add repeating character in team using team.add()', () => {
 });
 
 test('Adding multiple characters in team, using team.addAll(), trying to add only 3 unique characters', () => {
-  const team = new Team();
-
-  const valera = new Character('Valera', 'mage');
-  const stas = new Character('Stas', 'warrior');
-  const alex = new Character('Alex', 'archer');
 
   team.addAll(valera, stas, alex, valera, alex);
 
@@ -28,12 +24,7 @@ test('Adding multiple characters in team, using team.addAll(), trying to add onl
 });
 
 test('Should return Array from Set property using team.toArray()', () => {
-  const team = new Team();
-
-  const valera = new Character('Valera', 'mage');
-  const stas = new Character('Stas', 'warrior');
-  const alex = new Character('Alex', 'archer');
-
+  
   team.addAll(valera, stas, alex);
 
   expect(team.toArray()).toEqual([
